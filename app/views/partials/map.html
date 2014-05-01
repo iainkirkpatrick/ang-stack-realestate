@@ -1,1 +1,4 @@
-<leaflet center="center" tiles="tiles"></leaflet>
+<!--  Can't give the leaflet directive a controller for some reason, sounds from GH like it's an Angular bug -->
+<div ng-controller="MapCtrl">
+	<leaflet tiles="tiles" center="center" markers="markers"></leaflet>
+</div>

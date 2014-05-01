@@ -20,13 +20,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
-
-    <style type="text/css">
-        /*#map { position:absolute; top:0; bottom:0; width:100%; }*/
-        /*.container { position: relative; }*/
-    </style>
+    <!--<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>-->
+    <!-- <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' /> -->
 
   </head>
   <body ng-app="demoappApp">
@@ -35,8 +30,8 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view="map"></div>
-    <div class="container main" ui-view="main"></div>
+    <div ng-include="'partials/map'"></div>
+    <div class="container main" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -65,6 +60,7 @@
     <script src="bower_components/leaflet-dist/leaflet.js"></script>
     <script src="bower_components/angular-leaflet/dist/angular-leaflet-directive.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,6 +76,8 @@
         <script src="scripts/services/session.js"></script>
         <script src="scripts/services/user.js"></script>
         <script src="scripts/directives/mongooseError.js"></script>
+        <script src="scripts/services/properties.js"></script>
+        <script src="scripts/services/lo-dash.js"></script>
         <!-- endbuild -->
 </body>
 </html>
