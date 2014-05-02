@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoappApp')
-    .controller('MapCtrl', function ($scope, $http, properties) {
+    .controller('MapCtrl', function ($scope, $http, properties, geolocation) {
 
         //get properties and add to map as markers
         $scope.markers = {};
@@ -25,6 +25,7 @@ angular.module('demoappApp')
                   }
                 }
               };
+
         angular.extend($scope, {
             center: {
                 lat: -41.1,
@@ -36,4 +37,12 @@ angular.module('demoappApp')
                 scrollWheelZoom: false
               }
             });
+
+        geolocation.getLocation()
+          .then(function(result){
+            $scope.center = result;
+          }, function(reason){
+            $scope.center = reason;
+          });
+
       });
