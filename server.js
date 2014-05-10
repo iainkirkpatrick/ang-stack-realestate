@@ -31,7 +31,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 
 // Populate DB with sample data
 //// pretty sure because the models have been loaded in previous step, the dummy data accesses them when defining mongoose models in first steps.
-require('./lib/config/dummydata');
+// require('./lib/config/dummydata');
   
 // Passport Configuration
 var passport = require('./lib/config/passport');
